@@ -11,6 +11,8 @@
 #include "lilygoS3TDisplay.h"
 #elif defined(NERMINER_S3_AMOLED)
 #include "lilygoS3Amoled.h"
+#elif defined(NERMINER_S3_AMOLED_TOUCH)
+#include "lilygoS3AmoledTouch.h"
 #elif defined(NERMINER_S3_DONGLE)
 #include "lilygoS3Dongle.h"
 #elif defined(LILYGO_S3_T_EMBED)

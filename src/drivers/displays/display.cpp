@@ -16,6 +16,10 @@ DisplayDriver *currentDisplayDriver = &tDisplayDriver;
 DisplayDriver *currentDisplayDriver = &amoledDisplayDriver;
 #endif
 
+#ifdef AMOLED_TOUCH_DISPLAY
+DisplayDriver *currentDisplayDriver = &amoledDisplayDriver;
+#endif
+
 #ifdef DONGLE_DISPLAY
 DisplayDriver *currentDisplayDriver = &dongleDisplayDriver;
 #endif
