@@ -10,6 +10,7 @@ A few warnings still remain....
 Cheers
 Py-Jinx
 
+## Unchanged Description
 
 **The NerdSoloMiner v2**
 
