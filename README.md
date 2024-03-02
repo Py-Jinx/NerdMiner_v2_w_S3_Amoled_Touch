@@ -1,5 +1,16 @@
 # NerdSoloMiner
 
+## Changes in this fork:
+
+I tried to adapt to the Lilygo S3 Amoled Touch device. It works for me but I have only limited knowledge how I can build the filesystem image.
+
+Not sure if I could do it in a better way. 
+A few warnings still remain....
+
+Cheers
+Py-Jinx
+
+
 **The NerdSoloMiner v2**
 
 This is a **free and open source project** that let you try to reach a bitcoin block with a small piece of hardware.
