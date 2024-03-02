@@ -16,7 +16,7 @@
 #ifndef _TFT_eSPIH_
 #define _TFT_eSPIH_
 
-#define TFT_ESPI_VERSION "2.5.23"
+#define TFT_ESPI_VERSION "2.5.31"
 
 // Bit level feature flags
 // Bit 0 set: viewport capability
@@ -680,8 +680,8 @@ class TFT_eSPI : public Print { friend class TFT_eSprite; // Sprite class has ac
            textWidth(const char *string),                   // Returns pixel width of string in current font
            textWidth(const String& string, uint8_t font),   // As above for String types
            textWidth(const String& string),
-           fontHeight(int16_t font),                        // Returns pixel height of string in specified font
-           fontHeight(void);                                // Returns pixel width of string in current font
+           fontHeight(int16_t font),                        // Returns pixel height of specified font
+           fontHeight(void);                                // Returns pixel height of current font
 
            // Used by library and Smooth font class to extract Unicode point codes from a UTF8 encoded string
   uint16_t decodeUTF8(uint8_t *buf, uint16_t *index, uint16_t remaining),
@@ -731,7 +731,12 @@ class TFT_eSPI : public Print { friend class TFT_eSprite; // Sprite class has ac
            // Alpha blend 2 colours, see generic "alphaBlend_Test" example
            // alpha =   0 = 100% background colour
            // alpha = 255 = 100% foreground colour
-  inline uint16_t alphaBlend(uint8_t alpha, uint16_t fgc, uint16_t bgc);
+#ifdef STM32
+  uint16_t alphaBlend(uint8_t alpha, uint16_t fgc, uint16_t bgc);
+#else
+  inline
+  uint16_t alphaBlend(uint8_t alpha, uint16_t fgc, uint16_t bgc);
+#endif
            // 16 bit colour alphaBlend with alpha dither (dither reduces colour banding)
   uint16_t alphaBlend(uint8_t alpha, uint16_t fgc, uint16_t bgc, uint8_t dither);
            // 24 bit colour alphaBlend with optional alpha dither
